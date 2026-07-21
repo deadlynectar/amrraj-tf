@@ -9,18 +9,18 @@ terraform {
 
 provider "google" {
   project = "project-8db97ec3-fe82-4144-8d4"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  region  = "asia-south1"
+  zone    = "asia-south1-a"
 }
 
 resource "google_compute_network" "vpc_network" {
-  name = "terraform-network"
+  name = "my-tf-vpc"
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name         = "my-tf-instance"
   machine_type = "e2-small"
-  zone         = "us-central1-c"
+  zone         = "asia-south1-a"
   tags         = ["web", "dev"]
 
   metadata = {
